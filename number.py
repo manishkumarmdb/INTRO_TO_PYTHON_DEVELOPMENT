@@ -165,3 +165,76 @@ int_str1 = '89'
 float_from_int_str = float(int_str1)
 print(f'Float converted from integer string {int_str1} is: {float_from_int_str}')
 
+num = 10
+# print('The initialized number is: ' + num)  # This will raise a TypeError
+print('The initialized number is: ' + str(num))  # Corrected version
+
+print(f'The initialized number using f-string is: {num}')
+print('The initialized number using format method is: {}'.format(num))
+### Demonstrating use of underscores in numeric literals for better readability
+large_number = 1_000_000
+print(f'The large number is: {large_number}')
+print('The large number is: {}'.format(large_number))
+### Demonstrating use of scientific notation for large and small numbers
+large_sci_number = 1.2e6  # 1.2 million
+small_sci_number = 3.4e-5  # 0.000034
+print(f'Large scientific notation number: {large_sci_number}')
+print(f'Small scientific notation number: {small_sci_number}')
+### Demonstrating use of binary, octal, and hexadecimal literals
+binary_number = 0b1010  # 10 in decimal
+octal_number = 0o12     # 10 in decimal
+hexadecimal_number = 0xA # 10 in decimal
+print(f'Binary number (0b1010) in decimal: {binary_number}')
+print(f'Octal number (0o12) in decimal: {octal_number}')
+print(f'Hexadecimal number (0xA) in decimal: {hexadecimal_number}')
+### Demonstrating use of type() function to check variable types
+print(f'Type of large_number: {type(large_number)}')
+print(f'Type of large_sci_number: {type(large_sci_number)}')
+print(f'Type of binary_number: {type(binary_number)}')
+print(f'Type of octal_number: {type(octal_number)}')
+print(f'Type of hexadecimal_number: {type(hexadecimal_number)}')
+### Demonstrating use of isinstance() function to check variable types
+print(f'Is large_number an int? {isinstance(large_number, int)}')
+print(f'Is large_sci_number a float? {isinstance(large_sci_number, float)}')
+print(f'Is binary_number an int? {isinstance(binary_number, int)}')
+print(f'Is octal_number an int? {isinstance(octal_number, int)}')
+print(f'Is hexadecimal_number an int? {isinstance(hexadecimal_number, int)}')
+### Demonstrating use of conversion between different numeric types
+int_to_float = float(num)
+float_to_int = int(large_sci_number)
+print(f'Integer {num} converted to float: {int_to_float}')
+print(f'Float {large_sci_number} converted to integer: {float_to_int}')
+### Demonstrating use of arithmetic operations with different numeric types
+sum_mixed = num + large_sci_number
+print(f'Sum of integer {num} and float {large_sci_number} is: {sum_mixed}')
+product_mixed = num * binary_number
+print(f'Product of integer {num} and binary number {binary_number} is: {product_mixed}')
+### Demonstrating use of built-in numeric functions with different numeric types
+max_value = max(num, large_sci_number, binary_number)
+min_value = min(num, large_sci_number, binary_number)
+print(f'Maximum value among {num}, {large_sci_number}, and {binary_number} is: {max_value}')
+print(f'Minimum value among {num}, {large_sci_number}, and {binary_number} is: {min_value}')
+### Demonstrating use of math module functions with different numeric types
+import math
+sqrt_value = math.sqrt(large_sci_number)
+log_value = math.log(num)
+print(f'Square root of {large_sci_number} is: {sqrt_value}')
+print(f'Natural logarithm of {num} is: {log_value}')
+### Demonstrating use of random module functions with different numeric types
+import random
+random_int = random.randint(1, 100)
+random_float = random.uniform(1.0, 10.0)
+print(f'Random integer between 1 and 100: {random_int}')
+print(f'Random float between 1.0 and 10.0: {random_float}')
+### Demonstrating use of fractions module with different numeric types
+from fractions import Fraction
+fraction1 = Fraction(1, 3)
+fraction2 = Fraction(2, 5)
+fraction_sum = fraction1 + fraction2
+print(f'Sum of fractions {fraction1} and {fraction2} is: {fraction_sum}')
+### Demonstrating use of decimal module with different numeric types
+from decimal import Decimal
+decimal1 = Decimal('1.1')
+decimal2 = Decimal('2.2')
+decimal_sum = decimal1 + decimal2
+print(f'Sum of decimals {decimal1} and {decimal2} is: {decimal_sum}')
