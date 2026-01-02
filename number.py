@@ -1,3 +1,8 @@
+from decimal import Decimal
+from fractions import Fraction
+import math
+import random
+
 ### This script performs basic arithmetic operations based on user input.
 first_number = input('Enter the first number: ')
 second_number = input('Enter the second number: ')
@@ -215,25 +220,21 @@ min_value = min(num, large_sci_number, binary_number)
 print(f'Maximum value among {num}, {large_sci_number}, and {binary_number} is: {max_value}')
 print(f'Minimum value among {num}, {large_sci_number}, and {binary_number} is: {min_value}')
 ### Demonstrating use of math module functions with different numeric types
-import math
 sqrt_value = math.sqrt(large_sci_number)
 log_value = math.log(num)
 print(f'Square root of {large_sci_number} is: {sqrt_value}')
 print(f'Natural logarithm of {num} is: {log_value}')
 ### Demonstrating use of random module functions with different numeric types
-import random
 random_int = random.randint(1, 100)
 random_float = random.uniform(1.0, 10.0)
 print(f'Random integer between 1 and 100: {random_int}')
 print(f'Random float between 1.0 and 10.0: {random_float}')
 ### Demonstrating use of fractions module with different numeric types
-from fractions import Fraction
 fraction1 = Fraction(1, 3)
 fraction2 = Fraction(2, 5)
 fraction_sum = fraction1 + fraction2
 print(f'Sum of fractions {fraction1} and {fraction2} is: {fraction_sum}')
 ### Demonstrating use of decimal module with different numeric types
-from decimal import Decimal
 decimal1 = Decimal('1.1')
 decimal2 = Decimal('2.2')
 decimal_sum = decimal1 + decimal2
