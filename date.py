@@ -22,3 +22,6 @@ print('Your birthday is on:', birthday_date)
 # Calculating next birthday date
 next_birthday = birthday_date.replace(year=current_date.year)
 print('This year, your birthday will be on:', next_birthday)
+
+birthday_date_eve = birthday_date - timedelta(days = 1)
+print('The day before your birthday is:', birthday_date_eve)
