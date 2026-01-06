@@ -55,12 +55,16 @@ else:
 
 # print tax rate for the given usa state
 state = input('Enter your USA state abbreviation (e.g., CA for California): ')
-if state == 'CA':
+if state == 'CA' or 'WA':
     tax = 0.35
     print('Your California state tax rate is: ' + str(tax))
 elif state == 'TX':
     tax = 0.25
     print('Your Texas state tax rate is: ' + str(tax))
-elif state == 'FL':
+elif state == 'FL' or 'LA':
     tax = 0.30
     print('Your Florida state tax rate is: ' + str(tax))
+else:
+    tax = 0.20
+    print(f'Your {state} tax rate is: ' + str(tax))
+
