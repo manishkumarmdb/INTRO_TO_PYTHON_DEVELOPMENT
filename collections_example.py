@@ -1,3 +1,4 @@
+from array import array
 
 names = ['Alice', 'Bob', 'Charlie', 'David']
 ages = [24, 30, 22, 35]
@@ -18,6 +19,38 @@ employees = [{'name': 'Eve', 'department': 'HR', 'salary': 60000},
                 {'name': 'Grace', 'department': 'Finance', 'salary': 80000}]
 for employee in employees:
     print(f"Employee: {employee['name']}, Department: {employee['department']}, Salary: {employee['salary']}")
+
+# Using array module for efficient storage of numeric data
+score_array = array('i', [85, 90, 78, 92])
+score_array.append(88)
+score_array.append(78)
+for score in score_array:
+    print(f'Score: {score}')
+
+# Using array module for floating point numbers
+double_array = array('d')
+double_array.append(99.5)
+double_array.append(87.3)
+for value in double_array:
+    print(f'Double value: {value}')
+
+names = ['Alice', 'Bob', 'Charlie', 'David', 'Eve']
+print('names size: ' + str(len(names)))  # Output: 5
+names.insert(2, 'Zara')  # Insert 'Zara' at index 2
+print(names)  # Output: ['Alice', 'Bob', 'Zara', 'Charlie', 'David', 'Eve']
+names.remove('Bob')  # Remove 'Bob' from the list
+print(names)  # Output: ['Alice', 'Zara', 'Charlie', 'David', 'Eve']
+names.sort()  # Sort the list in ascending order
+print(names)  # Output: ['Alice', 'Charlie', 'David', 'Eve', 'Zara']
+names.reverse()  # Reverse the list
+print(names)  # Output: ['Zara', 'Eve', 'David', 'Charlie', 'Alice']
+popped_name = names.pop()  # Remove and return the last item
+print(popped_name)  # Output: 'Alice'
+print(names)  # Output: ['Zara', 'Eve', 'David', 'Charlie']
+
+# Slicing the list
+presenters = names[1:3]
+print(presenters)  # Output: ['Eve', 'David']
 
 # https://www.hackerrank.com/challenges/list-comprehensions/problem
 # List Comprehensions
