@@ -34,3 +34,30 @@ for s in students:
 if 'grade' in student:
     print(f"{student['name']}'s grade is: {student['grade']}")
 # Output: Bob's grade is: A
+
+# Example of using get() method
+grade = student.get('grade', 'Not Assigned')
+print(f"{student['name']}'s grade is: {grade}")
+# Output: Bob's grade is: A
+missing_key = student.get('hobby', 'No hobby specified')
+print(missing_key)  # Output: No hobby specified
+
+# Example of iterating over dictionary keys and values
+for key, value in student.items():
+    print(f"{key}: {value}")
+# Output:
+# name: Bob
+# age: 22
+# courses: ['Math', 'CompSci', 'Physics']
+# grade: A
+
+# Example of removing a key-value pair
+removed_course = student['courses'].pop()
+print(f"Removed course: {removed_course}")
+print(student)
+# Output: Removed course: Physics
+# {'name': 'Bob', 'age': 22, 'courses: ['Math', 'CompSci'], 'grade': 'A'}
+
+# Example of clearing the dictionary
+student.clear()
+print(student)  # Output: {}
