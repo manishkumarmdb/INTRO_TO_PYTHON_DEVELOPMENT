@@ -1,4 +1,4 @@
-import datetime
+import datetime, time
 
 def get_current_datetime():
     """Returns the current date and time."""
@@ -91,10 +91,14 @@ def get_initials(full_name):
     initials = ''.join([name[0].upper() for name in names])
     return initials
 
-def get_initials(name, upper=True):
-    """Returns the initials of a given name."""
-    initials = ''.join([part[0] for part in name.split()])
-    return initials.upper() if upper else initials.lower()
+def get_initials(name, force_upper):
+    """Returns the initials of a given full name, optionally forcing uppercase."""
+    names = name.split()
+    if force_upper:
+        initials = ''.join([n[0].upper() for n in names])
+    else:
+        initials = ''.join([n[0] for n in names])
+    return initials
 
 def calculate_age(birthdate):
     """Calculates age based on the birthdate."""
@@ -105,8 +109,22 @@ def calculate_age(birthdate):
 # Example usage
 if __name__ == "__main__":
     name = "John Doe"
-    print(f"Initials of '{name}': {get_initials(name)}")
+    print(f"Initials of '{name}': {get_initials(name, False)}")
 
     birthdate = datetime.date(1990, 5, 15)
     print(f"Age for birthdate {birthdate}: {calculate_age(birthdate)} years")
-    
+
+def sleep_for_seconds(seconds):
+    """Pauses execution for a given number of seconds."""
+    time.sleep(seconds)
+def sleep_for_milliseconds(milliseconds):
+    """Pauses execution for a given number of milliseconds."""
+    time.sleep(milliseconds / 1000.0)
+# Example usage
+if __name__ == "__main__":
+    print("Sleeping for 2 seconds...")
+    sleep_for_seconds(2)
+    print("Awake now!")
+    print("Sleeping for 500 milliseconds...")
+    sleep_for_milliseconds(500)
+    print("Awake now!")
