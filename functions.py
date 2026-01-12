@@ -71,7 +71,7 @@ if __name__ == "__main__":
     print("Date after 10 days:", format_datetime(future_dt))
     past_dt = subtract_days_from_datetime(current_dt, 10)
     print("Date 10 days ago:", format_datetime(past_dt))
-    print("Is 2024 a leap year?", is_leap_year(2024))
+    print("Is 2024 a leap year?", is_leap_year(2026))
     print("Day of the week:", get_day_of_week(current_dt))
     print("Days in February 2024:", get_days_in_month(2024, 2))
     converted_dt = convert_timezone(current_dt, -5)  # Convert to UTC-5
@@ -84,3 +84,29 @@ if __name__ == "__main__":
     print("End of the day:", format_datetime(end_of_day))
     print('Your state tax rate is: ' + str(tax))
     print("Difference between future and past date:", get_difference_between_datetimes(past_dt, future_dt))
+
+def get_initials(full_name):
+    """Returns the initials of a given full name."""
+    names = full_name.split()
+    initials = ''.join([name[0].upper() for name in names])
+    return initials
+
+def get_initials(name, upper=True):
+    """Returns the initials of a given name."""
+    initials = ''.join([part[0] for part in name.split()])
+    return initials.upper() if upper else initials.lower()
+
+def calculate_age(birthdate):
+    """Calculates age based on the birthdate."""
+    today = datetime.date.today()
+    age = today.year - birthdate.year - ((today.month, today.day) < (birthdate.month, birthdate.day))
+    return age
+
+# Example usage
+if __name__ == "__main__":
+    name = "John Doe"
+    print(f"Initials of '{name}': {get_initials(name)}")
+
+    birthdate = datetime.date(1990, 5, 15)
+    print(f"Age for birthdate {birthdate}: {calculate_age(birthdate)} years")
+    
