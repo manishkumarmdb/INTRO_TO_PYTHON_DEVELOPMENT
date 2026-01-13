@@ -88,7 +88,7 @@ if __name__ == "__main__":
 def get_initials(full_name):
     """Returns the initials of a given full name."""
     names = full_name.split()
-    initials = ''.join([name[0].upper() for name in names])
+    initials = ''.join(name[0:1].upper())
     return initials
 
 def get_initials(name, force_upper):
